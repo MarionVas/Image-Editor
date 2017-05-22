@@ -20,19 +20,17 @@ int main(int argc, char *argv[]) {
 			printf("Error: Expecting one command-line argument, which needs to be either 1, 2, or 3.\n");
 		}
 
-		switch(*argv[1])
+		if (*argv[1] == '1')
 		{
-			case 1 :
-				remove_red();
-				break;
-
-			case 2:
-				convert_to_black_and_white();
-				break;
-
-			case 3:
-				instagram_square();
-				break;
+			remove_red();
+		}
+		else if (*argv[1] == '2')
+		{
+			convert_to_black_and_white();
+		}
+		else if (*argv[1] == '3')
+		{
+			printf("Q3\n");
 		}
         return 0;
 }
