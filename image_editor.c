@@ -30,7 +30,7 @@ int main(int argc, char *argv[]) {
 		}
 		else if (*argv[1] == '3')
 		{
-			printf("Q3\n");
+			instagram_square();
 		}
         return 0;
 }
