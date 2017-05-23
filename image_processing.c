@@ -1,20 +1,24 @@
 #include <stdio.h>
 
+int R;
+int G;
+int B;  
+int column;
+int row;
+int ignore_value;
+int ignore_value_temp;
+int colour_range;
+char type;
+int column_count = 0;
+int row_count = 0;
 /*
  * Read an image from the standard input and set the red value of each pixel to
  * zero.
  */
 void remove_red()
 {
-  int R;
-  int G;
-  int B;
-  int column;
-  int row;
-  int colour_range;
-  char* type;
-  int column_count = 0;
   scanf("%s %d %d %d", &type, &column, &row, &colour_range);
+
   printf("%s \n%d \n%d \n%d\n", &type, column, row, colour_range);
   while (scanf("%d %d %d", &R, &G, &B) != EOF)
   {
@@ -33,16 +37,9 @@ void remove_red()
  */
 void convert_to_black_and_white()
 {
-  int R;
-  int G;
-  int B;
   int avg;
-  int column;
-  int row;
-  int colour_range;
-  char* type;
-  int column_count = 0;
   scanf("%s %d %d %d", &type, &column, &row, &colour_range);
+
   printf("%s \n%d \n%d \n%d\n", &type, column, row, colour_range);
   while (scanf("%d %d %d", &R, &G, &B) != EOF)
   {
@@ -63,23 +60,11 @@ void convert_to_black_and_white()
  */
 void instagram_square()
 {
-  int R;
-  int G;
-  int B;
-  
-  int column;
-  int row;
-
-  int ignore_value;
-  int ignore_value_temp;
-  int colour_range;
-  char* type;
-  int column_count = 0;
-  int row_count = 0;
   scanf("%s %d %d %d", &type, &column, &row, &colour_range);
 
   int smaller_dim = row > column ? column : row;
   ignore_value =  row > column ? 0 : column - row;
+  ignore_value_temp = ignore_value;
   printf("%s \n%d \n%d \n%d\n", &type, smaller_dim, smaller_dim, colour_range);
 
   while (scanf("%d %d %d", &R, &G, &B) != EOF)
@@ -102,7 +87,7 @@ void instagram_square()
         printf("\n");
         row_count++;
       }
-      
+  
     }
   }
 }
